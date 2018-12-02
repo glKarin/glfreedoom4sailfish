@@ -1,0 +1,10 @@
+dstrings.o: dstrings.c /usr/include/stdc-predef.h dstrings.h d_englsh.h \
+ /usr/lib/gcc/armv7hl-meego-linux-gnueabi/4.8.3/include/stddef.h
+
+/usr/include/stdc-predef.h:
+
+dstrings.h:
+
+d_englsh.h:
+
+/usr/lib/gcc/armv7hl-meego-linux-gnueabi/4.8.3/include/stddef.h:

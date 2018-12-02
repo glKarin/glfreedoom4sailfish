@@ -1,0 +1,28 @@
+prboom and svgalib
+==================
+
+Using the svgalib driver of SDL is not recommended, as it requires root
+privileges for the binary. If you want to run prboom without X11 use the fbcon
+driver, which has better hardware support and doesn't suffer from security
+problems.
+
+If this is not an option for you make sure to
+a) make prboom setuid root by doing
+   dpkg-statoverride --update --add root root 4755 /usr/games/prboom
+b) install libsdl1.2debian-all which has support for the svgalib driver.
+c) set the SDL_VIDEODRIVER environment variable to "svgalib" before invoking
+   prboom.
+
+music
+=====
+
+Prboom's music can be played via hardware or software MIDI. The default,
+if /dev/sequencer is present, is to attempt hardware playback. Unfortunately
+there are some issues with the music playback and some hardware that can
+result in X lockups.
+
+For this reason, the Debian package of prboom disables music by default. You
+can re-enable it by changing "music_card" in ~/.prboom/prboom.cfg to "-1"
+(which corresponds to auto-detect sound card).
+
+If you want software MIDI playback, install timidity.

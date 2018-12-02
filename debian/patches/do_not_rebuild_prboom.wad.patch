@@ -1,0 +1,25 @@
+do not rebuild prboom.wad
+
+--- prboom-2.5.0+dfsg1/data/Makefile.in.orig	2008-11-09 19:22:16.000000000 +0000
++++ prboom-2.5.0+dfsg1/data/Makefile.in	2008-11-10 22:45:26.000000000 +0000
+@@ -355,8 +355,8 @@
+ 
+ 
+ prboom.wad      :       prboom.txt $(wildcard graphics/*.ppm sprites/*.ppm lumps/*.lmp sounds/*.wav)
+-	-rm -f $@
+-	deutex -make prboom.txt $@
++#	-rm -f $@
++#	deutex -make prboom.txt $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
+--- prboom-2.5.0+dfsg1/data/Makefile.am.orig	2008-10-11 13:10:37.000000000 +0100
++++ prboom-2.5.0+dfsg1/data/Makefile.am	2008-11-10 22:45:26.000000000 +0000
+@@ -8,5 +8,5 @@
+ MAINTAINERCLEANFILES=prboom.wad
+ 
+ prboom.wad      :       prboom.txt $(wildcard graphics/*.ppm sprites/*.ppm lumps/*.lmp sounds/*.wav)
+-	-rm -f $@
+-	deutex -make prboom.txt $@
++#	-rm -f $@
++#	deutex -make prboom.txt $@

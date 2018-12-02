@@ -1,0 +1,11 @@
+<aegis>
+   <request>
+      <credential match="*" />
+    <deny>
+              <credential match="UID::*" />
+              <credential match="GID::*" />
+    </deny>
+      <for path="/usr/bin/prboom" />
+      <for path="/usr/bin/prboom-game-server" />
+   </request>
+</aegis>

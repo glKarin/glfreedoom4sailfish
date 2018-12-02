@@ -1,0 +1,26 @@
+#SNG: from stdin
+IHDR {
+    width: 8; height: 8; bitdepth: 8;
+    using color;
+}
+pHYs {xpixels: 2835; ypixels: 2835; per: meter;}  # (72 dpi)
+tIME {
+    # 31 Dec 2006 14:52:15 GMT
+    year:   2006
+    month:  12
+    day:    31
+    hour:   14
+    minute: 52
+    second: 15
+}
+IMAGE {
+    pixels hex
+    00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff
+    00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff
+    00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff
+    00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff
+    00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff
+    00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff
+    00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff
+    00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff 00ffff
+}

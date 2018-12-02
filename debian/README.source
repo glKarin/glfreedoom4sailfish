@@ -1,0 +1,22 @@
+The prboom source package
+=========================
+
+The prboom debian package is maintained in subversion by the Debian Games
+Team. You can obtain the source and build the package using svn-buildpackage:
+
+	a) svn co svn://svn.debian.org/svn/pkg-games/packages/trunk/prboom
+	b) mkdir tarballs
+	c) put the relevant orig.tar.gz into the tarballs directory
+	   (it can be found on debian source mirrors, or at
+	   <http://pkg-games.alioth.debian.org/tarballs/>).
+	d) cd prboom
+	e) build using svn-buildpackage (e.g.
+	   svn-buildpackage -rfakeroot -us -uc)
+
+If you do not want to use svn-buildpackage:
+
+	a) unpack the orig.tar.gz
+	b) chdir into the unpackacked source directory
+	c) svn export --force \
+	   svn://svn.debian.org/svn/pkg-games/packages/trunk/prboom .
+	d) build using whatever method you like

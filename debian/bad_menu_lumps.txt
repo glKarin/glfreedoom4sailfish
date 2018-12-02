@@ -1,0 +1,23 @@
+hu_frags.gif	77	45	frags
+m_about.gif	71	12	about
+m_auto.gif	102	15	automap
+m_chat.gif	154	15	chat strings
+m_compat.gif	219	15	doom compatibility
+m_demos.gif	74	12	demos
+m_enem.gif	91	15	enemies
+m_feat.gif	108	15	features
+m_generl.gif	96	15	general
+m_horsen.gif	256	16	horizontal
+m_hud.gif	205	12	heads up display
+m_keybnd.gif	152	15	key bindings
+m_mess.gif	113	15	messages
+m_mouse.gif	176	12	mouse options
+m_multi.gif	136	12	multiplayer
+m_setup.gif	67	15	setup
+m_sound.gif	173	12	sound options
+m_stat.gif	202	15	status bar / hud
+m_versen.gif	128	16	vertical
+m_video.gif	165	12	video options
+m_wad.gif	103	12	load wad
+m_weap.gif	101	15	weapons
+prboom.gif	90	15	prboom

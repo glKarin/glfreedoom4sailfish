@@ -1,0 +1,41 @@
+mesa_glu_error.o: mesa_glu_error.c /usr/include/stdc-predef.h mesa_glu.h \
+ /usr/include/GLES/gl.h /usr/include/GLES/glplatform.h \
+ /usr/include/KHR/khrplatform.h \
+ /usr/lib/gcc/armv7hl-meego-linux-gnueabi/4.8.3/include/stdint.h \
+ /usr/include/stdint.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-hard.h /usr/include/bits/wchar.h \
+ /usr/include/GLES/glext.h harmattan.h \
+ /usr/lib/gcc/armv7hl-meego-linux-gnueabi/4.8.3/include/stddef.h
+
+/usr/include/stdc-predef.h:
+
+mesa_glu.h:
+
+/usr/include/GLES/gl.h:
+
+/usr/include/GLES/glplatform.h:
+
+/usr/include/KHR/khrplatform.h:
+
+/usr/lib/gcc/armv7hl-meego-linux-gnueabi/4.8.3/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-hard.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/GLES/glext.h:
+
+harmattan.h:
+
+/usr/lib/gcc/armv7hl-meego-linux-gnueabi/4.8.3/include/stddef.h:

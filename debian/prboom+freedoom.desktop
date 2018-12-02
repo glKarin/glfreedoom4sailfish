@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=FreeDOOM
+Comment=A source-faithful Doom engine
+Exec=/usr/bin/prboom -iwad /usr/share/prboom/iwad/freedoom.wad
+Icon=/usr/share/icons/hicolor/80x80/apps/prboom_80.png
+Terminal=false
+Type=Application
+#MimeType=text/plain
+Categories=Game;ShooterGame;

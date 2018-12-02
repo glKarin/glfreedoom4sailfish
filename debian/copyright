@@ -1,0 +1,51 @@
+prboom a Doom port merged with LxDoom and LSDLDoom based on BOOM,
+a modified and improved DOOM engine
+
+Copyright (C) 1999 by
+id Software, Chi Hoang, Lee Killough, Jim Flynn, Rand Phares, Ty Halderman
+
+Copyright (C) 1999-2000 by
+Jess Haas, Nicolas Kalkhof, Colin Phipps, Florian Schulze
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+On Debian systems, the complete text of the GNU General Public
+License, version 2, can be found in /usr/share/common-licenses/GPL-2.
+
+Upstream Authors include:
+Colin Robert Phipps <cph at users.sourceforge.net>
+Nicolas Kalkhof <Figgi at users.sourceforge.net>
+Jess Haas <jessh at users.sourceforge.net>
+Florian Schulze <proff_fs at users.sourceforge.net>
+
+prboom was debianized by Arthur Korn <arthur@korn.ch> on Mon, 13 Nov 2000
+19:22:11 +0100. Maintenance from 2.2.3 to 2.2.6 was by Moritz Muehlenhoff
+<jmm@inutil.org>, with review and sponsorship by Emanuele Rocca
+<ema@debian.org>. Maintenance from 2.4.5 to present by Jon Dowland
+<jon@alcopop.org> and the Debian Games Team.
+
+prboom was downloaded from <http://prboom.sourceforge.net/linux.html>
+
+The version of prboom distributed in Debian differs from upstream in the
+following ways:
+
+    * support for helper dogs is disabled and the helper dog
+      resources are removed. This is because they are taken
+      from Wolfenstein 3D (c) ID Software, all rights
+      reserved.
+
+    * Various menu graphics have been substituted as the originals
+      are derived from menu graphics taken from Doom or Doom 2, both
+      (c) ID Software and all rights reserved. The list of lumps
+      replaced can be found in the file bad_menu_lumps.txt.
+
+An upstream tarball can be modified with these changes using the script
+"fix_upstream.sh" in the ./debian directory in the source package.

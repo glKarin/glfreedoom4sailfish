@@ -1,0 +1,101 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+#cflags="-Wall -O2"
+#
+#ifneq (,$(findstring debug,$(DEB_BUILD_OPTIONS)))
+#  cflags +=" -g"
+#endif
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	#$(MAKE) -f /usr/share/quilt/quilt.make patch //karin
+	# Add here commands to configure the package.
+	./configure --prefix=/usr --mandir=\$${prefix}/share/man --disable-cpu-opt --disable-dogs \
+		--disable-i386-asm --disable-gl	LDFLAGS="-Wl,--as-needed -Wl,-z,defs" #--with-waddir=\$${prefix}/share/prboom+freedoom
+#	--disable-cpu-opt
+#	--host=$(DEB_HOST_GNU_TYPE) --target=$(DEB_BUILD_GNU_TYPE) \
+
+	touch configure-stamp
+
+build: configure-stamp build-stamp
+build-stamp: configure-stamp
+	dh_testdir
+
+	# Add here commands to compile the package.
+	$(MAKE)
+
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp configure-stamp
+
+	# Add here commands to clean up after the build process.
+	[ ! -f Makefile ] || $(MAKE) distclean
+	#$(MAKE) -f /usr/share/quilt/quilt.make unpatch //karin
+
+	dh_clean
+	rm -f config.log
+
+dest=$(CURDIR)/debian/prboom
+dest_install=$(CURDIR)/debian/prboom+freedoom
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+	$(MAKE) install DESTDIR=$(dest)
+
+	# Optify
+	dh_installdirs usr/bin usr/share/prboom+freedoom/ usr/share/doc usr/share/man usr/share/prboom+freedoom/wads
+	cp $(dest)/usr/games/prboom* $(dest_install)/usr/bin/
+	rm -r $(dest)/usr/games
+	mv $(dest)/usr/share/games/doom/prboom.wad $(dest_install)/usr/share/prboom+freedoom/wads/
+	rm -r $(dest)/usr/share/games
+
+	# Maemoize
+	dh_installdirs usr/share/applications usr/share/icons/hicolor/80x80/apps
+	cp ./debian/prboom+freedoom.desktop $(dest_install)/usr/share/applications/
+	cp ./anna_buttons.png $(dest_install)/usr/share/prboom+freedoom/
+	cp ./freedoom/freedoom.wad $(dest_install)/usr/share/prboom+freedoom/wads/
+
+	#uudecode ./debian/prboom-64.png.uu
+	cp prboom_80.png $(dest_install)/usr/share/icons/hicolor/80x80/apps/
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+#	dh_movefiles ? Suspect this gets thing out of /usr and into /usr/local.
+#		Not sure but i'm doing that anyway and it's causing errors
+	dh_install
+	dh_installdocs
+#	dh_installman
+	dh_installchangelogs NEWS
+	mv $(dest)/usr/share/doc/prboom-2.5.0/* $(dest_install)/usr/share/doc/prboom+freedoom
+	mv $(dest)/usr/share/man/* $(dest_install)/usr/share/man
+	#rm -r $(dest)/usr/share/doc
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure

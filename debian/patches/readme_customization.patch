@@ -1,0 +1,32 @@
+Minor Debian customisation
+
+--- prboom-2.4.7+dfsg.orig/README
++++ prboom-2.4.7+dfsg/README
+@@ -92,7 +92,7 @@
+ prboom -width 640 -height 400
+ 
+ sets the resolution. This setting is remembered for future sessions. For
+-other parameters, see the included README.command-line.
++other parameters, see the manpages.
+ 
+ You may also wish to customise the key bindings. PrBoom's default keybindings
+ are the same as the original Doom; unlike original Doom, you can change key
+@@ -232,7 +232,7 @@
+ 
+ SDL_VIDEODRIVER=fbcon prboom
+ or
+-SDL_VIDEODRIVER=svga prboom
++SDL_VIDEODRIVER=svgalib prboom
+ 
+ Details
+ -------
+@@ -242,9 +242,6 @@
+ README.demos		provides a guide to PrBoom's demo support
+ README.compatibility	describes PrBoom's various compatibility
+ 			options and modes
+-README.command-line	gives a command line reference for prboom,
+-			prboom-game-server, and the format of boom.cfg.
+-			On UNIX/Linux systems use the man pages instead.
+ 
+ Editing features are not covered in the docs with this package. We plan
+ to bundle the editing docs as a separate download. Watch our website
